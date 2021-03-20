@@ -1,0 +1,78 @@
+$add-btn: blue;
+$complete-btn: green;
+$delete_btn: red;
+
+@mixin list-items {
+  font-size: 1.2rem;
+  list-style: none;
+  color: brown;
+}
+
+@mixin btns {
+  height: 1.6rem;
+  margin-left: 0.2rem;
+  color: #fff;
+  border-radius: 10%;
+}
+
+#form {
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+  flex-direction: column;
+  .form {
+    border: #000 solid 2px;
+    width: 25vw;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &__err {
+      color: red;
+    }
+    &__input {
+      height: 1.6rem;
+    }
+    &__btn {
+      @include btns;
+      background-color: $add-btn;
+      border-color: $add-btn;
+    }
+  }
+}
+
+
+#todos {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  .todos {
+    border: 2px solid #000;
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__list {
+      margin-top: 2rem;
+    }
+    &__item {
+      @include list-items;
+    }
+    &__btn {
+      @include btns;
+      border-color: $complete-btn;
+      background-color: $complete-btn;
+    }
+    &__dlt {
+      @include btns;
+      border-color: $delete_btn;
+      background-color: $delete_btn;
+    }
+    .complete {
+      font-style: italic;
+    }
+  }
+}
+
